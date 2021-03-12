@@ -275,7 +275,7 @@ let solarSystem =	{
 // - Calculate the solar system's distance from origin using the x, y and z
 //	 coordinates, saved into 'distanceFromOrigin' rounded to nearest INTEGER
 // - Calculate the size of the solar system in astronomical units saved
-//	 into 'sizeInAUs' to 2 decimal places
+//	 into 'sizeInAUs' to 2 decimal places - a STRING will be allowed here
 // - Determine if both Earth and Mars have the same amount of argon saved
 //	 into 'argonOnEarthLikeMars'
 // - This solar system is incomplete, append the Jupiter object 'jupiter' to the
@@ -492,7 +492,7 @@ console.log()
 
 // Deep object 2
 let correctDistanceFromOrigin = Math.round(Math.sqrt(solarSystem.properties.location.x**2 + solarSystem.properties.location.y**2 + solarSystem.properties.location.z**2))
-let correctSizeInAUs = parseFloat((solarSystem.properties.size / solarSystem.properties.planets[2].distance).toFixed(2))
+let correctSizeInAUs = (solarSystem.properties.size / solarSystem.properties.planets[2].distance).toFixed(2)
 let correctArgonOnEarthLikeMars = solarSystem.properties.planets[2].atmosphere.argon === solarSystem.properties.planets[3].atmosphere.argon
 
 if (distanceFromOrigin !== undefined && sizeInAUs !== undefined && argonOnEarthLikeMars !== undefined &&
@@ -501,7 +501,7 @@ if (distanceFromOrigin !== undefined && sizeInAUs !== undefined && argonOnEarthL
 	console.log(correctMsg + "All solar system tests passed!")
 	console.log("- The solar system's distance from origin to nearest integer you got was: " + distanceFromOrigin)
 	console.log("- The solar system's size in astronomical units to 2 decimal places you got was: " + sizeInAUs)
-	console.log("- Earth's and Mar's argon compositions were: " + solarSystem.properties.planets[2].atmosphere.argon + "% and " +
+	console.log("- Earth's and Mars's argon compositions were: " + solarSystem.properties.planets[2].atmosphere.argon + "% and " +
 	solarSystem.properties.planets[3].atmosphere.argon + "% respectively meaning them being equal you said was " + argonOnEarthLikeMars)
 	console.log("- Finally, after adding Jupiter to the solar system's planets, the 5th element of the array looked like:")
 	console.log(solarSystem.properties.planets[4])
@@ -510,7 +510,7 @@ if (distanceFromOrigin !== undefined && sizeInAUs !== undefined && argonOnEarthL
 	console.log(incorrectMsg + "One or more solar system tests did not pass!")
 	console.log("- The solar system's distance from origin to nearest integer should be " + correctDistanceFromOrigin + " but you got " + distanceFromOrigin)
 	console.log("- The solar system's size in astronomical units to 2 decimal places should be " + correctSizeInAUs + " but you got " + sizeInAUs)
-	console.log("- Earth's and Mar's argon compositions were: " + solarSystem.properties.planets[2].atmosphere.argon + "% and " +
+	console.log("- Earth's and Mars's argon compositions were: " + solarSystem.properties.planets[2].atmosphere.argon + "% and " +
 	solarSystem.properties.planets[3].atmosphere.argon + "% respectively meaning them being equal should be " + correctArgonOnEarthLikeMars +
 	" but you said this was " + argonOnEarthLikeMars)
 	console.log("- Jupiter should now be added to the solar system's planets, and the 5th element of the array should look like:")
