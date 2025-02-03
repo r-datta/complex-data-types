@@ -7,7 +7,7 @@
 //
 ////////////////////// YOUR CODE BELOW THIS LINE ///////////////////////
 
-let newArray
+let newArray = ["one"]
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -22,7 +22,7 @@ let maybeAnArray = generateRandomDataType()
 //
 ////////////////////// YOUR CODE BELOW THIS LINE ///////////////////////
 
-let isAnArray
+let isAnArray = maybeAnArray == Array
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -45,7 +45,8 @@ let array3 = JSON.parse(JSON.stringify(array1))
 //		them by reference vs making a copy of an array affects each variable's output
 //
 ////////////////////// YOUR CODE BELOW THIS LINE ///////////////////////
-
+array2[0] = "Not"
+array3[array3.length - 1] = "copy"
 
 
 ////////////////////////////////////////////////////////////////////////
@@ -61,6 +62,10 @@ let array3 = JSON.parse(JSON.stringify(array1))
 let growMe = [ "one", "two" ]
 //
 ////////////////////// YOUR CODE BELOW THIS LINE ///////////////////////
+growMe.unshift("zero")
+growMe.push("three") ;
+
+
 
 
 
@@ -76,7 +81,8 @@ let growMe = [ "one", "two" ]
 let shrinkMe = [ 1, 2, 3, 4 ]
 //
 ////////////////////// YOUR CODE BELOW THIS LINE ///////////////////////
-
+shrinkMe.pop()
+shrinkMe.shift()
 
 
 ////////////////////////////////////////////////////////////////////////
@@ -94,7 +100,7 @@ let johnsList = [ "Elderberry", "Fig", "Guava" ]
 //
 ////////////////////// YOUR CODE BELOW THIS LINE ///////////////////////
 
-let mergedLists
+let mergedLists = marysList.concat(johnsList)
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -110,7 +116,7 @@ let getMyLength = generateRandomLengthArray()
 //
 ////////////////////// YOUR CODE BELOW THIS LINE ///////////////////////
 
-let arrayLength
+let arrayLength = getMyLength.length
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -127,7 +133,7 @@ let nthElement = generateRandomNumber(1, getMyNthElement.length)
 //
 ////////////////////// YOUR CODE BELOW THIS LINE ///////////////////////
 
-let arrayNthElement
+let arrayNthElement = getMyNthElement[nthElement -1]
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -144,7 +150,7 @@ let getMySlice = [ "How", "much", "wood", "would", "a", "woodchuck", "chuck", "?
 //
 ////////////////////// YOUR CODE BELOW THIS LINE ///////////////////////
 
-let arraySlice
+let arraySlice = getMySlice.slice(2, 6)
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -161,7 +167,7 @@ let insertIntoMe = [ "Well", "easy", "!" ]
 //
 ////////////////////// YOUR CODE BELOW THIS LINE ///////////////////////
 
-
+insertIntoMe.splice(1, 0, "that", "was")
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -177,7 +183,7 @@ let insertIntoMe = [ "Well", "easy", "!" ]
 let removeFromMe = [ "You", "know", "what", "they", "say", "sometimes", "less", "is", "more" ]
 //
 ////////////////////// YOUR CODE BELOW THIS LINE ///////////////////////
-
+removeFromMe.splice(2, 3)
 
 
 ////////////////////////////////////////////////////////////////////////
@@ -195,7 +201,7 @@ let breakfastList = generateRandomBreakfastList()
 //
 ////////////////////// YOUR CODE BELOW THIS LINE ///////////////////////
 
-let breakfastIncludesBacon
+let breakfastIncludesBacon = breakfastList.includes("bacon")
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -209,6 +215,7 @@ let breakfastIncludesBacon
 let sortMe = generateGroceryList()
 //
 ////////////////////// YOUR CODE BELOW THIS LINE ///////////////////////
+sortMe.sort() 
 
 
 
@@ -227,6 +234,7 @@ let sortAndReverseMe = generateGroceryList()
 //	of expression1 into the input of expression2
 //
 ////////////////////// YOUR CODE BELOW THIS LINE ///////////////////////
+sortAndReverseMe.sort().reverse()
 
 
 
@@ -245,7 +253,8 @@ let splitMeIntoArray = "The quick brown fox jumps over the lazy dog"
 //
 ////////////////////// YOUR CODE BELOW THIS LINE ///////////////////////
 
-let arrayFromSplitString
+let arrayFromSplitString = splitMeIntoArray.split(" ")
+
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -263,7 +272,8 @@ let joinMeIntoString = [ 106, 162, 9, 2 ]
 //
 ////////////////////// YOUR CODE BELOW THIS LINE ///////////////////////
 
-let stringFromJoinedArray
+let stringFromJoinedArray = joinMeIntoString.join(".")
+
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -294,8 +304,8 @@ let ticTacToeArray = generateRandomTicTacToe()
 //
 ////////////////////// YOUR CODE BELOW THIS LINE ///////////////////////
 
-let ticTacToeWinner
-
+let ticTacToeWinner = ticTacToeArray[0][0] === ticTacToeArray[1][1] && ticTacToeArray[0][0] === ticTacToeArray[2][2] &&
+						ticTacToeArray[0][0] !== ""
 ////////////////////////////////////////////////////////////////////////
 
 
